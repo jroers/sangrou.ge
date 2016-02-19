@@ -8,9 +8,10 @@ class SessionsController < ApplicationController
     @user = User.confirm(user_params)
     if @user
       login(@user)
-      redirect_to root_path
+      redirect_to profile_path
     else
       redirect_to login_path
+      flash[:error] = "Looks like something went wrong."
     end
   end
 

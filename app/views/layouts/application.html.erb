@@ -36,15 +36,15 @@
 	</nav>
 	
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-10 col-md-offset-1 centered">
 			<% flash.each do |name, msg| %>
 		    <% if name == "error" %>
-		  	  <p class="alert-danger">
+		  	  <h3 class="alert-danger">
 		    <% else %>
-		      <p class="alert-success">
+		      <h3 class="alert-success">
 		    <% end %>
 			    <small> <%= name.capitalize %>: <%= msg %> </small>
-			  </p>
+			  </h3>
 			<% end %>
 		</div>
 	</div>

@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 
+	def show
+		@user = current_user
+	end
+
 	def new_tech
 		@organization = Organization.find_by_id(params[:organization_id])
 		@user = User.new
@@ -13,7 +17,7 @@ class UsersController < ApplicationController
 		if domain_matches?
 			@user = User.new(tech_params.merge(email: params[:user][:email].downcase ,is_tech?: true))
 			if @user.save
-				redirect_to root_path
+				redirect_to profile_path
 			else
 				redirect_to tech_signup_path(params[:user][:organization][:id])
 				flash[:error] = "Please ensure all fields are entered correctly"
