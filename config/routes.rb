@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/', to: 'pages#home', as: 'home'
 
   get '/login', to: 'sessions#new', as: 'login'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
   post '/sessions', to: 'sessions#create'
 
   get '/users', to: 'users#index', as: 'users'
