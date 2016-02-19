@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 	def domain_matches?
 		user_email = params[:user][:email].downcase
 		expected_domain = params[:user][:organization_domain]
-		if user_email[-1 * expected_domain.length, expected_domain.length]
+		if user_email[-1 * expected_domain.length, expected_domain.length] == expected_domain
 			return true
 		else
 			redirect_to tech_signup_path(params[:user][:organization_id])
