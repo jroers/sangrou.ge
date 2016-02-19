@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219001434) do
+ActiveRecord::Schema.define(version: 20160219172238) do
+
+  create_table "donations", force: :cascade do |t|
+    t.string   "abo"
+    t.string   "rhb"
+    t.string   "product_code"
+    t.datetime "collection_date"
+    t.datetime "expiration_date"
+    t.integer  "heart_rate"
+    t.string   "bp"
+    t.decimal  "hemoglobin"
+    t.boolean  "donation_accepted?"
+    t.integer  "donor_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "donations", ["donor_id"], name: "index_donations_on_donor_id"
+  add_index "donations", ["organization_id"], name: "index_donations_on_organization_id"
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
