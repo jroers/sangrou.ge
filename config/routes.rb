@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index', as: 'users'
   get '/orgs/:organization_id', to: 'users#new_tech', as: 'tech_signup'
+  post '/users', to: 'users#create_tech'
 
   get '/orgs', to: 'organizations#index', as: 'organizations'
 end
