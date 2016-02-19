@@ -4,8 +4,9 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 
-	def new
-		@user = User.new	
+	def new_tech
+		@organization = Organization.find_by_id(params[:organization_id])
+		@user = User.new
 	end
 
 end
