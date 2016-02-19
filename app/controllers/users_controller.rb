@@ -13,6 +13,10 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def new_donor
+		@user = User.new
+	end
+
 	def create_tech
 		if domain_matches?
 			@user = User.new(tech_params.merge(email: params[:user][:email].downcase ,is_tech?: true))

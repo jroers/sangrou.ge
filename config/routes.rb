@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/orgs/:organization_id', to: 'users#new_tech', as: 'tech_signup'
   post '/users', to: 'users#create_tech'
   get '/profile', to: 'users#show', as: 'profile'
+  get '/donations/new/new_donor', to: 'users#new_donor', as: 'donor_signup'
 
   get '/orgs', to: 'organizations#index', as: 'organizations'
+
+  get '/donations/new/:donor_id', to: 'donations#new', as: "new_donation"
 end
