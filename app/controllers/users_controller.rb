@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 	end
 
 	def create_tech
-		p "****** PARAMETERS ARE HERE ****** #{params}"
 		if domain_matches?
 			@user = User.new(tech_params.merge(email: params[:user][:email].downcase ,is_tech?: true))
 			if @user.save
