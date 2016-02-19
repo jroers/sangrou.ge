@@ -1,0 +1,27 @@
+body {
+	background: url('sunset-blurred-backgrounds.jpg');
+	background-repeat: tile;
+}
+
+nav.navbar {
+	border-radius: 0;
+	background: red;
+
+	.navbar-brand {
+		color: white;
+	}
+	
+	.navbar-nav li a {
+		color: white;
+	}
+}
+
+.form {
+	background: rgba(255,255,255,0.3);
+	padding: 10px;
+	border-radius: 5px;
+
+	.btn {
+		width: 100%;
+	}
+}
