@@ -1,6 +1,11 @@
+$navbar-text-color: white;
+$body-text-color: white;
+
 body {
 	background: url('sunset-blurred-backgrounds.jpg');
 	background-repeat: tile;
+
+	color: white;
 }
 
 nav.navbar {
@@ -8,11 +13,11 @@ nav.navbar {
 	background: red;
 
 	.navbar-brand {
-		color: white;
+		color: $navbar-text-color;
 	}
 	
 	.navbar-nav li a {
-		color: white;
+		color: $navbar-text-color;
 	}
 }
 
@@ -24,4 +29,8 @@ nav.navbar {
 	.btn {
 		width: 100%;
 	}
+}
+
+.centered {
+	text-align: center;
 }
