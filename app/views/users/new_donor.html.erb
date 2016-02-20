@@ -1,1 +1,102 @@
-New Donor Page
+<div class="container" id="donor-signup-form">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 form">
+		<%= form_for @user do |f| %>
+			<fieldset>
+		    <legend>New Donor</legend>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="first">First name:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :first, required: true, placeholder: "John", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="last">Last name:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :last, required: true, placeholder: "Doe", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="phone">Phone number:</label>
+		      <div class="col-md-8">
+		        <%= f.telephone_field :phone, required: true, placeholder: "(555) 555-5555", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="dob">Date of Birth</label>
+		      <div class="col-md-8">
+		        <%= f.date_field :dob, required: true, placeholder: "MM-DD-YYYY", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="address1">Mailing Address:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :address1, required: true, placeholder: "225 Bush St", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="address2">Apartment/Unit/Suite:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :address2, placeholder: "5th floor", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="city">City:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :city, placeholder: "San Francisco", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="state">State:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :state, placeholder: "CA", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+				<div class="form-group">
+		      <label class="col-md-4 control-label" for="zip">Postal code:</label><br>
+		      <div class="col-md-8">
+		        <%= f.number_field :zip, placeholder: "94104", class: "form-control" %><br><br>
+		      </div>
+		    </div>
+				<span class="centered col-md-12">Your login information:</span>
+				<div class="form-group">
+		      <label class="col-md-4 control-label" for="email">Email address:</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :email, required: true, placeholder: "name@example.com", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="password">Password:</label>
+		      <div class="col-md-8">
+		        <%= f.password_field :password, required: true, placeholder: "Password", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="password">Password Confirmation:</label>
+		      <div class="col-md-8">
+		        <%= f.password_field :password_confirmation, required: true, placeholder: "The same password", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <div class="col-md-12">
+		        <%= f.submit "Create Donor Profile", class: "btn btn-success" %>
+		      </div>
+		    </div>
+
+		  </fieldset>
+		<% end %>
+		</div>
+	</div>
+</div>
