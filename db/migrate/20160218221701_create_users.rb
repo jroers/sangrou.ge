@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first
       t.string :email
       t.string :password_digest
-      t.integer :phone
+      t.integer :phone, limit: 10
       t.string :dob
       t.string :address1
       t.string :address2
