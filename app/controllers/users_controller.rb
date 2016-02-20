@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
 	def index
-		@users = User.all
+		@donors = User.where(is_tech?: false)
+		@techs = User.where(is_tech?: true)
 		if params[:search]
-			if User.find_by_id(params[:search])
+			if User.find_by(id: params[:search], is_tech?: false)
 				redirect_to update_donor_path(params[:search])
 			else
 				redirect_to profile_path
