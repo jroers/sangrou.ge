@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index', as: 'users'
   get '/orgs/:organization_id', to: 'users#new_tech', as: 'tech_signup'
-  post '/users', to: 'users#create_tech'
+  post '/users', to: 'users#create'
   get '/profile', to: 'users#show', as: 'profile'
   get '/donations/new/new_donor', to: 'users#new_donor', as: 'donor_signup'
   get '/donations/new/:id', to: 'users#update_donor', as: 'update_donor'
