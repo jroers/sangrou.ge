@@ -2,10 +2,19 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		if params[:search]
+			if User.find_by_id(params[:search])
+				redirect_to update_donor_path(params[:search])
+			else
+				redirect_to profile_path
+				flash[:error] = "Donor ID not found"
+			end
+		end
 	end
 
 	def show
 		@user = current_user
+		@donor = User.new
 	end
 
 	def new_tech
