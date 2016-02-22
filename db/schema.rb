@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160219172238) do
     t.string   "email"
     t.string   "password_digest"
     t.integer  "phone",           limit: 10
-    t.string   "dob"
+    t.date     "dob"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
