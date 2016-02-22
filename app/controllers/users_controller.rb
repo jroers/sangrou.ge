@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 			if domain_matches?
 				@user = User.new(tech_params.merge(email: params[:user][:email].downcase ,is_tech?: true))
 				if @user.save
+					login(@user)
 					redirect_to profile_path
 				else
 					redirect_to tech_signup_path(params[:user][:organization][:id])
@@ -49,6 +50,10 @@ class UsersController < ApplicationController
 				end
 			end
 		end
+	end
+
+	def update_donor
+		@donor = User.find_by_id(params[:id])
 	end
 
 	private
