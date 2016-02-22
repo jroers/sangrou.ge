@@ -23,14 +23,15 @@ ActiveRecord::Schema.define(version: 20160219172238) do
     t.string   "bp"
     t.decimal  "hemoglobin"
     t.boolean  "donation_accepted?"
-    t.integer  "donor_id"
+    t.integer  "tech_id"
+    t.integer  "user_id"
     t.integer  "organization_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "donations", ["donor_id"], name: "index_donations_on_donor_id"
   add_index "donations", ["organization_id"], name: "index_donations_on_organization_id"
+  add_index "donations", ["user_id"], name: "index_donations_on_user_id"
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"

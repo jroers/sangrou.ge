@@ -10,7 +10,8 @@ class CreateDonations < ActiveRecord::Migration
       t.string :bp
       t.decimal :hemoglobin
       t.boolean :donation_accepted?
-      t.references :donor, index: true, foreign_key: true
+      t.integer :tech_id
+      t.references :user, index: true, foreign_key: true
       t.references :organization, index: true, foreign_key: true
 
       t.timestamps null: false
