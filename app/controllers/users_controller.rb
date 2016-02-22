@@ -52,8 +52,12 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def update_donor
+	def edit_donor
 		@donor = User.find_by_id(params[:id])
+	end
+
+	def update_donor
+		
 	end
 
 	private

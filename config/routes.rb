@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/profile', to: 'users#show', as: 'profile'
   get '/donations/new/new_donor', to: 'users#new_donor', as: 'donor_signup'
-  get '/donations/new/:id', to: 'users#update_donor', as: 'update_donor'
+  get '/donations/new/:id', to: 'users#edit_donor', as: 'edit_donor'
+  patch '/users/:id', to: 'users#update_donor'
 
   get '/orgs', to: 'organizations#index', as: 'organizations'
 
