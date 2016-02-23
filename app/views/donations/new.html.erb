@@ -1,0 +1,56 @@
+<div class="container" id="donor-signup-form">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 form">
+		<%= form_for @donation do |f| %>
+			<fieldset>
+		    <legend>Verify Donor Information</legend>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="abo">Blood Type (ABO):</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :abo, required: true, placeholder: "E.g. O", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="rhb">Blood Screen (+/-):</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :rhb, required: true, placeholder: "E.g. +", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="heart_rate">Heart Rate/Pulse:</label>
+		      <div class="col-md-8">
+		        <%= f.number_field :heart_rate, required: true, placeholder: "E.g. 70", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="bp">Blood Pressure</label>
+		      <div class="col-md-8">
+		        <%= f.text_field :bp, required: true, placeholder: "E.g. 100/70", class: "form-control" %><br>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="col-md-4 control-label" for="hemoglobin">Hemoglobin:</label>
+		      <div class="col-md-8">
+		        <%= f.number_field :hemoglobin, required: true, placeholder: "E.g. 13.0", class: "form-control", step: 0.1 %><br>
+		        <%= f.hidden_field :user_id, value: @donor.id %>
+		        <%= f.hidden_field :tech_id, value: @tech.id %>
+		        <%= f.hidden_field :organization_id, value: @tech.organization_id %>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <div class="col-md-12">
+		        <%= f.submit "Save Donation!", class: "btn btn-success" %>
+		      </div>
+		    </div>
+
+		  </fieldset>
+		<% end %>
+		</div>
+	</div>
+</div>
