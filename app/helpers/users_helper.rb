@@ -1,8 +1,7 @@
 module UsersHelper
 	
 	def tech?
-		current_user
-		if @current_user
+		if current_user
 			@current_user.is_tech?
 		end
 	end

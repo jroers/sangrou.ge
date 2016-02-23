@@ -15,9 +15,9 @@
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
 	    	<% if affiliated_org? && @org.logo %>
-				<a class="navbar-brand" href="/"><img src="<%= @org.logo %>" id="brand"></a>
+				<a class="navbar-brand" href="/profile"><img src="<%= @org.logo %>" id="brand"></a>
 				<% elsif affiliated_org? && @org.name %>
-	    	<a class="navbar-brand" href="/"><%= @org.name %></a>
+	    	<a class="navbar-brand" href="/profile"><%= @org.name %></a>
 	    	<% else %>
 	    	<a class="navbar-brand" href="/">SangRouge</a>
 	    	<% end %>
