@@ -17,5 +17,6 @@ Rails.application.routes.draw do
 
   get '/orgs', to: 'organizations#index', as: 'organizations'
 
-  # get '/donations/new/:donor_id', to: 'donations#new', as: "new_donation"
+  get '/donations/new/:donor_id/vitals', to: 'donations#new', as: "new_donation"
+  post '/donations', to: 'donations#create'
 end
