@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   patch '/users/:id', to: 'users#update_donor'
 
   get '/orgs', to: 'organizations#index', as: 'organizations'
+  get '/profile/donation_dashboard', to: 'organizations#show', as: 'organization'
 
   get '/donations/new/:donor_id/vitals', to: 'donations#new', as: "new_donation"
   post '/donations', to: 'donations#create'
