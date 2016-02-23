@@ -14,7 +14,8 @@ tech = User.create(
 	last: "Phleb",
 	email: "ip.phleb1@gablood.co",
 	is_tech?: true,
-	password: "1234"
+	password: "1234",
+	organization_id: org.id
 )
 
 donor = User.create(

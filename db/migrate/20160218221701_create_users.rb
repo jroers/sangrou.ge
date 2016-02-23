@@ -13,6 +13,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :state
       t.integer :zip
       t.boolean :is_tech?
+      t.integer :organization_id
 
       t.timestamps null: false
     end

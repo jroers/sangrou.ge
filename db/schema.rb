@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160219172238) do
     t.string   "state"
     t.integer  "zip"
     t.boolean  "is_tech?"
+    t.integer  "organization_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
