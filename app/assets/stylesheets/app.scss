@@ -4,13 +4,14 @@ $body-text-color: white;
 body {
 	background: url('sunset-blurred-backgrounds.jpg');
 	background-repeat: tile;
-
+	font-family: 'Lato', sans-serif;
 	color: white;
 }
 
 nav.navbar {
 	border-radius: 0;
 	background: red;
+	font-family: 'Comfortaa', cursive;
 
 	.navbar-brand {
 		color: $navbar-text-color;
