@@ -1,5 +1,7 @@
 class DonationsController < ApplicationController
 
+	before_action :logged_in?, except: []
+
 	def index
 		@donations = Donation.all
 	end

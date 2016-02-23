@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_action :logged_in?, except: [:new_tech]
+
 	def index
 		@donors = User.where(is_tech?: false)
 		@techs = User.where(is_tech?: true)
