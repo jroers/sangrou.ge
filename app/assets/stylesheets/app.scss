@@ -3,7 +3,8 @@ $body-text-color: white;
 
 body {
 	background: url('sunset-blurred-backgrounds.jpg');
-	background-repeat: tile;
+	background-size: cover;
+	background-attachment: fixed;
 	font-family: 'Lato', sans-serif;
 	color: white;
 }
