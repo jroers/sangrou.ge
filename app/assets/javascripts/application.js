@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-3.3.6.min
+//= require odometer.min
 //= require turbolinks
 //= require_tree .

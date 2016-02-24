@@ -12,6 +12,7 @@
  *
  *= require bootstrap-3.3.6.min
  *= require bootstrap-glyphicons
+ *= require odometer-theme-default
  *= require_tree .
  *= require_self
  */
