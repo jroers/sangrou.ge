@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :logged_in?, except: [:new_tech]
+	before_action :logged_in?, except: [:new_tech, :create]
 
 	def index
 		@donors = User.where(is_tech?: false)
@@ -27,8 +27,13 @@ class UsersController < ApplicationController
 	end
 
 	def new_tech
-		@organization = Organization.find_by_id(params[:organization_id])
-		@user = User.new
+		if current_user
+			redirect_to profile_path
+			flash[:error] = "You do not have access to this page while logged-in"
+		else
+			@organization = Organization.find_by_id(params[:organization_id])
+			@user = User.new
+		end
 	end
 
 	def new_donor
@@ -36,7 +41,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		if session[:user_id]
+		if current_user
 			@user = User.new(new_donor_params.merge(email: params[:user][:email].downcase))
 			if @user.save
 				# TODO: UPDATE TE FOLLOWING PATH ONCE DONATION PROCESS IS BETTER DEFINED
@@ -46,7 +51,7 @@ class UsersController < ApplicationController
 				flash[:error] = "Email already taken."
 			end
 		else
-			if domain_matches?
+			if domain_matches? && params[:user][:organization_id]
 				@user = User.new(tech_params.merge(email: params[:user][:email].downcase ,is_tech?: true))
 				if @user.save
 					login(@user)
