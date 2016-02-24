@@ -21,7 +21,11 @@
 				<% elsif affiliated_org? && @org.name %>
 	    	<a class="navbar-brand" href="/profile"><%= @org.name %></a>
 	    	<% else %>
-	    	<a class="navbar-brand" href="/">SangRouge</a>
+	    		<% if @current_user %>
+	    		<a class="navbar-brand" href="/profile">SangRouge</a>
+	    		<% else %>
+	    		<a class="navbar-brand" href="/">SangRouge</a>
+	    		<% end %>
 	    	<% end %>
 	    	<button class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
           <span class="sr-only">Toggle navigation</span>
