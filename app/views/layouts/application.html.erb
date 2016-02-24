@@ -46,18 +46,19 @@
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-	
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1 centered">
-			<% flash.each do |name, msg| %>
-		    <% if name == "error" %>
-		  	  <h3 class="alert-danger">
-		    <% else %>
-		      <h3 class="alert-success">
-		    <% end %>
-			    <small> <%= name.capitalize %>: <%= msg %> </small>
-			  </h3>
-			<% end %>
+	<div class="container fade-in" id="flash-messages">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 centered">
+				<% flash.each do |name, msg| %>
+			    <% if name == "error" %>
+			  	  <h3 class="alert-danger">
+			    <% else %>
+			      <h3 class="alert-success">
+			    <% end %>
+				    <small> <%= name.capitalize %>: <%= msg %> </small>
+				  </h3>
+				<% end %>
+			</div>
 		</div>
 	</div>
 
