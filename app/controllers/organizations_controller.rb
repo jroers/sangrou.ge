@@ -1,11 +1,19 @@
 class OrganizationsController < ApplicationController
+	# TODO: Build more robust helper method to check if tech
+	# If not, then the page should reload to the profile_path
+	# before_action :tech?, except: [:index]
+
 	def index
 		@organizations = Organization.all
 	end
 
 	def show
-		@organization = Organization.find_by_id(current_user.organization_id)
-		sort_donation_types(@organization)
+		if tech?
+			@organization = Organization.find_by_id(current_user.organization_id)
+			sort_donation_types(@organization)
+		else
+			redirect_to profile_path
+		end
 	end
 
 	private
