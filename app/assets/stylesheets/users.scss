@@ -1,3 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.odometer {
+	font-size: 36px;
+}
+
+.donation-counter {
+	background: rgba(0,0,0,0.3);
+	border-radius: 15px;
+	border: 1px solid rgba(0,0,0,0.4);
+	margin-bottom: 15px
+}
