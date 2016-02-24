@@ -19,6 +19,23 @@ body {
 	background-color: $dropdown-hover-color;
 }
 
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: $dropdown-hover-color;
+	color: $navbar-text-color;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+	color: $navbar-text-color;
+}
+
+ul.dropdown-menu {
+	background: $dropdown-hover-color;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+	background: red;
+}
+
 nav.navbar {
 	border-radius: 0;
 	background: red;
@@ -48,7 +65,7 @@ nav.navbar {
 		background-color: $dropdown-hover-color;
 	}
 	
-	.navbar-nav li a {
+	.navbar-nav li a, .navbar-nav ul li a {
 		color: $navbar-text-color;
 	}
 }
