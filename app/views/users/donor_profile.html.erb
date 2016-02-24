@@ -1,0 +1,23 @@
+<div class="container fade-in">
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
+			
+			<h1 class="centered">Welcome to your donor profile, <%= @donor.first %></h1>
+
+			<h3 class="centered">These are your past donations:</h3>
+			<hr>
+			<% @donor.donations.each do |donation| %>
+			<div>
+				<h4>Collected at <%= donation.organization.name %> (<%= time_ago_in_words(donation.created_at) %> ago)</h4>
+				<p>Type: <%= donation.abo %><%= donation.rhb %></p>
+				<p><strong>Vitals:</strong></p>
+				<p>Heart rate: <%= donation.heart_rate %> bpm</p>
+				<p>Blood Pressure: <%= donation.bp %> mmHg</p>
+				<p>Hemoglobin: <%= donation.hemoglobin %></p>
+			</div>
+			<hr>
+			<% end %>
+
+		</div>
+	</div>
+</div>

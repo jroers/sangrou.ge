@@ -17,8 +17,13 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = current_user
-		@donor = User.new
+		if tech?
+			@user = current_user
+			@donor = User.new
+		else
+			@donor = current_user
+			render :donor_profile
+		end
 	end
 
 	def new_tech
