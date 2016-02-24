@@ -1,5 +1,7 @@
 $navbar-text-color: white;
 $body-text-color: white;
+$navbar-accent-color: #B30000;
+$dropdown-hover-color: #FF7979;
 
 @-webkit-keyframes fadeIn { from { opacity:0; top: 15px; } to { opacity:1; top: 0 } }
 @-moz-keyframes fadeIn { from { opacity:0; top: 15px; } to { opacity:1; top: 0 } }
@@ -13,10 +15,19 @@ body {
 	color: white;
 }
 
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: $dropdown-hover-color;
+}
+
 nav.navbar {
 	border-radius: 0;
 	background: red;
 	font-family: 'Comfortaa', cursive;
+	border-color: $navbar-accent-color;
+	
+	.navbar-collapse {
+		border-color: $navbar-accent-color;
+	}
 
 	.navbar-brand {
 		color: $navbar-text-color;
@@ -24,6 +35,17 @@ nav.navbar {
 		#brand {
 			max-height: 100%;
 		}
+	}
+	
+	.navbar-toggle {
+		border-color: $navbar-accent-color;
+		.icon-bar {
+			background-color: $navbar-accent-color;
+		}
+	}
+
+	.navbar-toggle:hover {
+		background-color: $dropdown-hover-color;
 	}
 	
 	.navbar-nav li a {
@@ -59,13 +81,13 @@ nav.navbar {
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
  
-	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
-	animation-duration:1s;
+	-webkit-animation-duration:0.3s;
+	-moz-animation-duration:0.3s;
+	animation-duration:0.3s;
 }
  
 .fade-in {
--webkit-animation-delay: 0.2s;
--moz-animation-delay: 0.2s;
-animation-delay: 0.2s;
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay: 0.5s;
+animation-delay: 0.5s;
 }

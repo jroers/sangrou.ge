@@ -7,10 +7,10 @@
 	border-radius: 5px;
 	min-height: 250px;
 	margin-bottom: 15px;
+	transition: background 0.3s ease;
 	background: rgba(0,0,0,0.4);
 
 	position: relative;
-	top: 100px;
 	
 	h1 {
 		font-size: 64px;
@@ -24,4 +24,8 @@
 		width: 90%;
 		text-align: center;
 	}
+}
+
+.blood-product-card:hover {
+	background: rgba(0,0,0,0.7);
 }
