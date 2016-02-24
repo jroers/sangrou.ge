@@ -4,25 +4,27 @@
 			
 			<h1 class="centered">Welcome to your donor profile, <%= @donor.first %></h1>
 			<div class="col-md-12">
-				<div class="col-sm-2 col-sm-offset-5 donation-counter centered">
+				<div class="col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3 donation-counter centered">
 					<div data-donation-count="<%= @donor.donations.count %>"></div>
 					<p>Total Donations:</p>
 					<div id="odometer" class="odometer">
 					</div>
 				</div>
 			</div>
-			<h3 class="centered">These are your past donations:</h3>
-			<hr>
+			<div class="col-xs-12 centered">
+				<h3 class=>These are your past donations:</h3>
+				<hr>	
+			</div>
 			<% @donor.donations.each do |donation| %>
-			<div>
+			<div class="col-xs-12">
 				<h4>Collected at <%= donation.organization.name %> (<%= time_ago_in_words(donation.created_at) %> ago)</h4>
 				<p>Type: <%= donation.abo %><%= donation.rhb %></p>
 				<p><strong>Vitals:</strong></p>
 				<p>Heart rate: <%= donation.heart_rate %> bpm</p>
 				<p>Blood Pressure: <%= donation.bp %> mmHg</p>
 				<p>Hemoglobin: <%= donation.hemoglobin %></p>
+				<hr>
 			</div>
-			<hr>
 			<% end %>
 
 		</div>
