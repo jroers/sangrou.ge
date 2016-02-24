@@ -7,7 +7,7 @@ class OrganizationsController < ApplicationController
 		@organizations = Organization.all
 	end
 
-	def show
+	def org_dashboard
 		if tech?
 			@organization = Organization.find_by_id(current_user.organization_id)
 			sort_donation_types(@organization.donations)
