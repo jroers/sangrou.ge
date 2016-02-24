@@ -1,0 +1,46 @@
+<div class="container" id="my-sticks-dashboard">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 centered">
+			<div class="col-md-12">
+				<h1>My Total Sticks:</h1>
+			</div>
+
+			<div class="col-sm-5 blood-product-card fade-in">
+				<h1>O-</h1>
+				<h3 class="footer-content"><%= @Oneg.count %> units</h3>
+			</div>
+			<div class="col-sm-5 col-sm-offset-2 blood-product-card fade-in">
+				<h1>O+</h1>
+				<h3 class="footer-content"><%= @Opos.count %> units</h3>
+			</div>
+
+			<div class="col-sm-5 blood-product-card fade-in">
+				<h1>A-</h1>
+				<h3 class="footer-content"><%= @Aneg.count %> units</h3>
+			</div>
+			<div class="col-sm-5 col-sm-offset-2 blood-product-card fade-in">
+				<h1>A+</h1>
+				<h3 class="footer-content"><%= @Apos.count %> units</h3>
+			</div>
+
+			<div class="col-sm-5 blood-product-card fade-in">
+				<h1>B-</h1>
+				<h3 class="footer-content"><%= @Bneg.count %> units</h3>
+			</div>
+			<div class="col-sm-5 col-sm-offset-2 blood-product-card fade-in">
+				<h1>B+</h1>
+				<h3 class="footer-content"><%= @Bpos.count %> units</h3>
+			</div>
+
+			<div class="col-sm-5 blood-product-card fade-in">
+				<h1>AB-</h1>
+				<h3 class="footer-content"><%= @ABneg.count %> units</h3>
+			</div>
+			<div class="col-sm-5 col-sm-offset-2 blood-product-card fade-in">
+				<h1>AB+</h1>
+				<h3 class="footer-content"><%= @ABpos.count %> units</h3>
+			</div>
+
+		</div>
+	</div>
+</div>

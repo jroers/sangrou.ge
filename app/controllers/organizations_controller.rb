@@ -10,7 +10,16 @@ class OrganizationsController < ApplicationController
 	def show
 		if tech?
 			@organization = Organization.find_by_id(current_user.organization_id)
-			sort_donation_types(@organization)
+			sort_donation_types(@organization.donations)
+		else
+			redirect_to profile_path
+		end
+	end
+
+	def my_sticks_dashboard
+		if tech?
+			@donations = Donation.where(tech_id: current_user.id)
+			sort_donation_types(@donations)
 		else
 			redirect_to profile_path
 		end
@@ -18,7 +27,7 @@ class OrganizationsController < ApplicationController
 
 	private
 
-	def sort_donation_types(org)
+	def sort_donation_types(donations)
 		@Opos = []
 		@Oneg = []
 		@Apos = []
@@ -27,7 +36,7 @@ class OrganizationsController < ApplicationController
 		@Bneg = []
 		@ABpos = []
 		@ABneg = []
-		org.donations.each do |donation|
+		donations.each do |donation|
 			if donation.abo.upcase == "O"
 				if donation.rhb == "+"
 					@Opos << donation
