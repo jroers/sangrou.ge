@@ -95,7 +95,9 @@ nav.navbar {
 		padding: 10px;
 		border-radius: 2px;
 		background: rgba(236,95,95,1);
-		color: $body-text-color;
+		small {
+			color: $body-text-color;
+		}	
 	}
 
 	h3.alert-success {
@@ -103,7 +105,9 @@ nav.navbar {
 		padding: 10px;
 		border-radius: 2px;
 		background: #33B947;
-		color: $body-text-color;
+		small {
+			color: $body-text-color;
+		}	
 	}
 }
 

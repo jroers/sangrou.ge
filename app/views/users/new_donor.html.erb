@@ -3,7 +3,7 @@
 		<div class="col-md-6 col-md-offset-3 form">
 		<%= form_for @user do |f| %>
 			<fieldset>
-		    <legend>New Donor</legend>
+		    <legend>New Donor - Please provide Photo ID</legend>
 
 		    <div class="form-group">
 		      <label class="col-md-4 control-label" for="first">First name:</label>
@@ -20,16 +20,16 @@
 		    </div>
 
 		    <div class="form-group">
-		      <label class="col-md-4 control-label" for="phone">Phone number:</label>
+		      <label class="col-md-4 control-label" for="dob">Date of Birth</label>
 		      <div class="col-md-8">
-		        <%= f.telephone_field :phone, required: true, placeholder: "(555) 555-5555", class: "form-control" %><br>
+		        <%= f.date_field :dob, required: true, placeholder: "MM-DD-YYYY", class: "form-control" %><br>
 		      </div>
 		    </div>
 
 		    <div class="form-group">
-		      <label class="col-md-4 control-label" for="dob">Date of Birth</label>
+		      <label class="col-md-4 control-label" for="phone">Phone number:</label>
 		      <div class="col-md-8">
-		        <%= f.date_field :dob, required: true, placeholder: "MM-DD-YYYY", class: "form-control" %><br>
+		        <%= f.telephone_field :phone, required: true, placeholder: "(555) 555-5555", class: "form-control" %><br>
 		      </div>
 		    </div>
 
@@ -64,10 +64,10 @@
 				<div class="form-group">
 		      <label class="col-md-4 control-label" for="zip">Postal code:</label><br>
 		      <div class="col-md-8">
-		        <%= f.number_field :zip, placeholder: "94104", class: "form-control" %><br><br>
+		        <%= f.number_field :zip, placeholder: "94104", class: "form-control" %>
 		      </div>
 		    </div>
-				<span class="centered col-md-12">Your login information:</span>
+				<h3 class="centered col-md-12">Your Login Information:</h3>
 				<div class="form-group">
 		      <label class="col-md-4 control-label" for="email">Email address:</label>
 		      <div class="col-md-8">
