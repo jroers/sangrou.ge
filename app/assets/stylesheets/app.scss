@@ -88,6 +88,25 @@ nav.navbar {
 	text-align: center;
 }
 
+#flash-messages {
+	
+	h3.alert-danger {
+		font-size: 24px;
+		padding: 10px;
+		border-radius: 2px;
+		background: rgba(236,95,95,1);
+		color: $body-text-color;
+	}
+
+	h3.alert-success {
+		font-size: 24px;
+		padding: 10px;
+		border-radius: 2px;
+		background: #33B947;
+		color: $body-text-color;
+	}
+}
+
 .fade-in {
 	opacity:0;  /* make things invisible upon start */
 	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
