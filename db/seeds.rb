@@ -13,7 +13,7 @@ org1 = Organization.create(
 	zip:94104
 )
 
-1tech1 = User.create(
+tech01 = User.create(
 	first: "GA",
 	last: "Phleb",
 	email: "ga.phleb1@gablood.co",
@@ -22,7 +22,7 @@ org1 = Organization.create(
 	organization_id: org1.id
 )
 
-1tech2 = User.create(
+tech02 = User.create(
 	first: "GA",
 	last: "Stabber",
 	email: "ga.phleb2@gablood.co",
@@ -70,7 +70,7 @@ org2 = Organization.create(
 	zip:20006
 )
 
-2tech1 = User.create(
+tech11 = User.create(
 	first: "RC",
 	last: "Phleb",
 	email: "rc.phleb1@redcross.org",
@@ -79,7 +79,7 @@ org2 = Organization.create(
 	organization_id: org2.id
 )
 
-2tech2 = User.create(
+tech12 = User.create(
 	first: "RC",
 	last: "Stabber",
 	email: "rc.phleb2@redcross.org",

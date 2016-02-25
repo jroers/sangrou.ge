@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160219172238) do
     t.string   "first"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "phone",           limit: 10
+    t.string   "phone"
     t.date     "dob"
     t.string   "address1"
     t.string   "address2"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20160219172238) do
     t.integer  "zip"
     t.boolean  "is_tech?"
     t.integer  "organization_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
