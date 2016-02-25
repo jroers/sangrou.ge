@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'sessions#new'
 
-  get '/', to: 'pages#home', as: 'home'
+  get '/about', to: 'pages#about', as: 'about'
 
   get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'
