@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 	def new_tech
 		if current_user
 			redirect_to profile_path
-			flash[:error] = "You do not have access to this page while logged-in"
 		else
 			@organization = Organization.find_by_id(params[:organization_id])
 			@user = User.new
@@ -48,7 +47,7 @@ class UsersController < ApplicationController
 				redirect_to new_donation_path(@user.id)
 			else
 				redirect_to donor_signup_path
-				flash[:error] = "Email already taken."
+				flash[:error] = @user.errors.full_messages.join(", ")
 			end
 		else
 			if domain_matches? && params[:user][:organization_id]
@@ -57,8 +56,8 @@ class UsersController < ApplicationController
 					login(@user)
 					redirect_to profile_path
 				else
-					redirect_to tech_signup_path(params[:user][:organization][:id])
-					flash[:error] = "Please ensure all fields are entered correctly"
+					redirect_to tech_signup_path(params[:user][:organization_id])
+					flash[:error] = @user.errors.full_messages.join(", ")
 				end
 			end
 		end
@@ -77,7 +76,7 @@ class UsersController < ApplicationController
 	private
 
 	def tech_params
-		params.require(:user).permit(:first, :last, :password)
+		params.require(:user).permit(:first, :last, :password, :organization_id)
 	end
 
 	def new_donor_params
