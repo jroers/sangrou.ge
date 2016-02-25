@@ -8,7 +8,7 @@ $dropdown-hover-color: #FF7979;
 @keyframes fadeIn { from { opacity:0; top: 15px; } to { opacity:1; top: 0 } }
 
 body {
-	background: url('sunset-blurred-backgrounds.jpg');
+	background-image: image-url('sunset-blurred-backgrounds.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 	font-family: 'Lato', sans-serif;

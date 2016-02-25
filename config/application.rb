@@ -32,5 +32,6 @@ module SangrouGe
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << Rails.root.join("vendor","assets", "fonts")
+    config.serve_static_assets = true
   end
 end
