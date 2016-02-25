@@ -1,10 +1,10 @@
-<div class="container" id="login-form">
+<div class="container fade-in" id="login-form">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3 form">
 
       <%= form_for @user, url: "/sessions", method: "post" do |f| %>
         <fieldset>
-          <legend>Login</legend>
+          <legend class="centered">Login</legend>
 
           <div class="form-group">
             <label class="col-sm-4 control-label" for="email">Email</label>
