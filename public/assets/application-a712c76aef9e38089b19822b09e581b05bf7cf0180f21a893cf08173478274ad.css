@@ -390,7 +390,7 @@ hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eeeeee;}
 }
 /* line 10, /Users/Joe/dev/projects/project-03/sangrou.ge/app/assets/stylesheets/app.scss */
 body {
-  background: url("sunset-blurred-backgrounds.jpg");
+  background-image: url(/assets/sunset-blurred-backgrounds-b28e7f41b98c36aae27b0222ef25ccd45bde8fea58d3974f7cd9c5993c4b216a.jpg);
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Lato', sans-serif;
