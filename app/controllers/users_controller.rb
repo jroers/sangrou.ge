@@ -69,8 +69,12 @@ class UsersController < ApplicationController
 
 	def update_donor
 		@donor = User.find_by_id(params[:id])
-		@donor.update_attributes(update_donor_params.merge(email: params[:user][:email].downcase))
-		redirect_to new_donation_path(@donor.id)
+		if @donor.update_attributes(update_donor_params.merge(email: params[:user][:email].downcase))
+			redirect_to new_donation_path(@donor.id)
+		else
+			flash[:error] = @donor.errors.full_messages.join(", ")
+			redirect_to edit_donor_path(@donor)
+		end
 	end
 
 	private
